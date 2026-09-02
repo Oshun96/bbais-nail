@@ -18,6 +18,8 @@ from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 import bookings  # noqa: E402
 import db  # noqa: E402
 import routes_booking  # noqa: E402
+import routes_desk  # noqa: E402
+import walkins  # noqa: E402
 import shop_store  # noqa: E402
 from security import (  # noqa: E402
     BodySizeLimitMiddleware,
@@ -33,6 +35,7 @@ async def lifespan(app: FastAPI):
     await db.ping()
     written = await shop_store.seed_shops()
     await bookings.ensure_indexes()
+    await walkins.ensure_indexes()
     print(f"[bbais-nail] db ok; seeded shops: {written or 'none (already current)'}")
     yield
     await db.close()
@@ -109,6 +112,7 @@ async def update_shop_config(slug: str, payload: ShopConfig):
 
 app.include_router(api)
 app.include_router(routes_booking.register(_load))
+app.include_router(routes_desk.register(_load))
 
 
 if __name__ == "__main__":

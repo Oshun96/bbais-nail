@@ -328,3 +328,41 @@ p { margin: 0 0 1em; }
   .bk-grid { grid-template-columns: 1fr; }
   .bk-summary { position: static; order: -1; }
 }
+
+/* ------------------------------------------------- check-in / front desk --- */
+.q-pos {
+  font-family: var(--font-heading); font-size: clamp(4rem, 14vw, 7rem);
+  line-height: 1; color: var(--accent); margin: 8px 0 4px;
+}
+.q-ref {
+  width: 100%; background: var(--base); border: 1px solid var(--line); color: var(--text);
+  border-radius: 9px; padding: 14px; font: inherit; font-size: 1.5rem;
+  letter-spacing: 0.34em; text-align: center; text-transform: uppercase;
+  font-family: var(--font-heading);
+}
+.q-ref:focus { outline: 0; border-color: var(--accent); }
+.q-back {
+  display: block; margin: 12px auto 0; background: none; border: 0;
+  color: var(--muted); font: inherit; font-size: 0.84rem; cursor: pointer;
+}
+.q-back:hover { color: var(--text); }
+
+.q-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+.q-row:last-of-type { border-bottom: 0; }
+.q-num {
+  width: 28px; height: 28px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; font-size: 0.8rem;
+  border: 1px solid var(--accent-line); color: var(--accent);
+}
+.q-seat {
+  background: var(--accent-soft); border: 1px solid var(--accent-line); color: var(--accent);
+  border-radius: 8px; padding: 7px 14px; font: inherit; font-size: 0.82rem; cursor: pointer;
+}
+.q-seat:hover { background: var(--accent); color: #0a0a0a; }
+
+.pay { margin-top: 16px; }
+.pay-mount { min-height: 8px; }
+.pay-sandbox {
+  font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 10px;
+}

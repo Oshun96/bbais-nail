@@ -9,6 +9,8 @@ import Team from './pages/Team'
 import NailMenu from './pages/NailMenu'
 import Visit from './pages/Visit'
 import Book from './pages/Book'
+import CheckIn from './pages/CheckIn'
+import Desk from './pages/Desk'
 
 export default function App() {
   const { shop, error } = useShop()
@@ -34,6 +36,8 @@ export default function App() {
           <Route path="/menu" element={<NailMenu />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/check-in" element={<CheckIn />} />
+          <Route path="/desk" element={<Desk />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

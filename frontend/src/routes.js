@@ -12,7 +12,12 @@ export const NAV = [
   { path: '/team', label: 'Our Team' },
   { path: '/visit', label: 'Visit' },
   { path: '/book', label: 'Book' },
+  { path: '/check-in', label: 'Check In' },
 ]
 
+/** Staff screens: real routes that need files on the host, but kept out of the
+ *  client-facing nav. */
+export const STAFF = ['/desk']
+
 /** Every route except "/", which the host already serves as index.html. */
-export const SUBROUTES = NAV.map((r) => r.path).filter((p) => p !== '/')
+export const SUBROUTES = [...NAV.map((r) => r.path), ...STAFF].filter((p) => p !== '/')
