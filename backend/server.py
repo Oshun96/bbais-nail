@@ -56,7 +56,10 @@ if origins:
         CORSMiddleware,
         allow_origins=origins,
         allow_credentials=True,
-        allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+        # PUT belongs here: the admin panel saves client records and whole shop
+        # configs with it. Omitting it only shows up in production, because the
+        # dev proxy makes the same calls same-origin and skips preflight entirely.
+        allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allow_headers=["Content-Type", "Authorization", "X-Admin-Key"],
     )
 
