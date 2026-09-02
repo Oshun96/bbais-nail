@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { applyTheme, setDocumentMeta } from './theme'
+import { apiGet } from './api'
 
 const ShopCtx = createContext(null)
 
@@ -23,13 +24,11 @@ export function ShopProvider({ children }) {
     setError(null)
     ;(async () => {
       try {
-        const idx = await fetch('/api/shops').then((r) => r.json())
+        const idx = await apiGet('/api/shops')
         if (!live) return
         setRoster(idx.shops || [])
         const target = slug || idx.default
-        const res = await fetch(`/api/shops/${encodeURIComponent(target)}/config`)
-        if (!res.ok) throw new Error(`shop "${target}" is not configured (${res.status})`)
-        const cfg = await res.json()
+        const cfg = await apiGet(`/api/shops/${encodeURIComponent(target)}/config`)
         if (!live) return
         applyTheme(cfg.theme)
         setDocumentMeta(cfg)
