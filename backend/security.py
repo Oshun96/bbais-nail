@@ -69,9 +69,16 @@ class BodySizeLimitMiddleware(BaseHTTPMiddleware):
         super().__init__(app)
         self.max_bytes = max_bytes
 
+    # A photo is legitimately far bigger than a JSON body, so the consultation
+    # route gets its own cap rather than forcing the whole API's limit up.
+    UPLOAD_PATHS = ("/consult",)
+    UPLOAD_MAX_BYTES = 12_000_000
+
     async def dispatch(self, request: Request, call_next):
+        limit = (self.UPLOAD_MAX_BYTES
+                 if request.url.path.endswith(self.UPLOAD_PATHS) else self.max_bytes)
         declared = request.headers.get("content-length")
-        if declared and declared.isdigit() and int(declared) > self.max_bytes:
+        if declared and declared.isdigit() and int(declared) > limit:
             raise HTTPException(status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, "request body too large")
         return await call_next(request)
 

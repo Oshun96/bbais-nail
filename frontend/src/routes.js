@@ -13,6 +13,7 @@ export const NAV = [
   { path: '/visit', label: 'Visit' },
   { path: '/book', label: 'Book' },
   { path: '/check-in', label: 'Check In' },
+  { path: '/consult', label: 'Consultation' },
   { path: '/chat', label: 'Chat' },
 ]
 

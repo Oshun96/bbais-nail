@@ -13,6 +13,7 @@ import CheckIn from './pages/CheckIn'
 import Desk from './pages/Desk'
 import Admin from './pages/Admin'
 import Chat from './pages/Chat'
+import Consult from './pages/Consult'
 import AgentBubble from './components/AgentBubble'
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/desk" element={<Desk />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/consult" element={<Consult />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

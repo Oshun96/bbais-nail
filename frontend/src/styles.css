@@ -528,3 +528,39 @@ p { margin: 0 0 1em; }
   .ag-bubble { right: 12px; bottom: 12px; }
   .switcher { bottom: 76px; right: 12px; }
 }
+
+/* ---------------------------------------------------------- consultation --- */
+.cs-drop {
+  display: grid; place-items: center; min-height: 220px; cursor: pointer;
+  background: var(--base); border: 1px dashed var(--line); border-radius: 11px;
+  overflow: hidden; padding: 16px; text-align: center; margin-top: 8px;
+}
+.cs-drop:hover { border-color: var(--accent-line); }
+.cs-drop img { max-width: 100%; max-height: 340px; border-radius: 8px; object-fit: contain; }
+
+.cs-note {
+  width: 100%; background: var(--base); border: 1px solid var(--line); color: var(--text);
+  border-radius: 9px; padding: 11px 13px; font: inherit; font-size: 0.93rem; resize: vertical;
+}
+.cs-note:focus { outline: 0; border-color: var(--accent); }
+
+.cs-asked {
+  font-size: 0.86rem; color: var(--muted); font-style: italic;
+  border-left: 2px solid var(--accent-line); padding-left: 12px; margin: 0 0 16px;
+}
+.cs-prefilled {
+  font-size: 0.86rem; color: var(--accent); background: var(--accent-soft);
+  border: 1px solid var(--accent-line); border-radius: 9px; padding: 10px 14px; margin: 0 0 6px;
+}
+
+.cs-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.cs-chip {
+  display: inline-flex; align-items: center; gap: 7px; font-size: 0.84rem;
+  border: 1px solid var(--accent-line); color: var(--text);
+  border-radius: 999px; padding: 5px 13px;
+}
+.cs-chip em { color: var(--accent); font-style: normal; font-size: 0.78rem; }
+.cs-sw { width: 13px; height: 13px; border-radius: 50%; display: inline-block; }
+
+.cs-tryon { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+.cs-tryon.off { opacity: 0.5; }

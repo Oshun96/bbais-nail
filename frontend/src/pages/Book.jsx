@@ -50,9 +50,19 @@ export default function Book() {
   const addons = shop.services.filter((s) => s.active && s.addon)
   const { shapes, lengths, finishes } = shop.nail_menu
 
-  const [sel, setSel] = useState({
-    service: '', shape: '', length: '', finish: '', colour: '', technician: '',
-  })
+  // A consultation (or a rebook from the CRM) hands its choices over in the
+  // URL, so the client lands on the form with them already filled in.
+  const params = new URLSearchParams(window.location.search)
+  const [sel, setSel] = useState(() => ({
+    service: params.get('service') || '',
+    shape: params.get('shape') || '',
+    length: params.get('length') || '',
+    finish: params.get('finish') || '',
+    colour: params.get('colour') || '',
+    technician: params.get('technician') || '',
+  }))
+  const [prefilled] = useState(() =>
+    ['shape', 'length', 'finish', 'colour'].some((k) => params.get(k)))
   const [client, setClient] = useState({ name: '', phone: '', email: '', notes: '' })
   const [quote, setQuote] = useState(null)
   const [days, setDays] = useState([])
@@ -211,6 +221,12 @@ export default function Book() {
 
         <div className="bk-grid">
           <form onSubmit={submit} className="bk-main">
+            {prefilled && (
+              <p className="cs-prefilled">
+                We've carried your consultation choices over — change anything you like.
+              </p>
+            )}
+
             <Step n="1" title="Choose your service">
               <div className="bk-choices">
                 {services.map((s) => (
