@@ -212,6 +212,19 @@ class DepositRules(BaseModel):
     policy_text: str = ""
 
 
+class BookingRules(BaseModel):
+    """How this shop takes appointments. Shops genuinely differ here — a walk-in
+    lounge books on 15-minute marks an hour out, a studio books on the half hour
+    a day out — so it is config, not a constant."""
+    slot_granularity_min: int = Field(15, gt=0)
+    # How soon before an appointment the book closes.
+    min_lead_min: int = Field(60, ge=0)
+    max_days_ahead: int = Field(90, gt=0)
+    # Sets at/over this length get a reminder — long sets are where no-shows hurt.
+    remind_over_min: int = Field(60, ge=0)
+    remind_hours_before: int = Field(24, ge=0)
+
+
 class AgentPersona(BaseModel):
     """The front-desk agent's voice. It speaks AS the shop — never as a model,
     never with an engine or infrastructure name."""
@@ -255,6 +268,7 @@ class ShopConfig(BaseModel):
     nail_menu: NailMenu = Field(default_factory=NailMenu)
     colours: List[Colour] = Field(default_factory=list)
     deposit: DepositRules = Field(default_factory=DepositRules)
+    booking: BookingRules = Field(default_factory=BookingRules)
     agent: AgentPersona = Field(default_factory=AgentPersona)
     payments: PaymentsConfig = Field(default_factory=PaymentsConfig)
     seo: SeoConfig = Field(default_factory=SeoConfig)

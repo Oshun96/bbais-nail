@@ -15,7 +15,9 @@ load_dotenv(Path(__file__).parent / ".env")  # before anything reads the environ
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, status  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 
+import bookings  # noqa: E402
 import db  # noqa: E402
+import routes_booking  # noqa: E402
 import shop_store  # noqa: E402
 from security import (  # noqa: E402
     BodySizeLimitMiddleware,
@@ -30,6 +32,7 @@ from shop_config import DAY_LABELS, DAYS, ShopConfig  # noqa: E402
 async def lifespan(app: FastAPI):
     await db.ping()
     written = await shop_store.seed_shops()
+    await bookings.ensure_indexes()
     print(f"[bbais-nail] db ok; seeded shops: {written or 'none (already current)'}")
     yield
     await db.close()
@@ -105,6 +108,7 @@ async def update_shop_config(slug: str, payload: ShopConfig):
 
 
 app.include_router(api)
+app.include_router(routes_booking.register(_load))
 
 
 if __name__ == "__main__":

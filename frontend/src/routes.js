@@ -11,6 +11,7 @@ export const NAV = [
   { path: '/menu', label: 'The Menu' },
   { path: '/team', label: 'Our Team' },
   { path: '/visit', label: 'Visit' },
+  { path: '/book', label: 'Book' },
 ]
 
 /** Every route except "/", which the host already serves as index.html. */

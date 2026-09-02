@@ -588,5 +588,12 @@
       "spa pedicure brooklyn"
     ],
     "price_range": "$$$"
+  },
+  "booking": {
+    "slot_granularity_min": 30,
+    "min_lead_min": 120,
+    "max_days_ahead": 60,
+    "remind_over_min": 60,
+    "remind_hours_before": 24
   }
 }
