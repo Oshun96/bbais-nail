@@ -1,0 +1,592 @@
+{
+  "slug": "lacquer-and-lume",
+  "name": "Lacquer & Lume",
+  "tagline": "Quiet luxury for your hands.",
+  "about": "A small studio in Fort Greene built around unhurried appointments. Every set is booked with processing time built in, so nobody is rushed out of the chair and nobody waits on a tech who is still finishing someone else.",
+  "timezone": "America/New_York",
+  "address": {
+    "line1": "418 Myrtle Avenue",
+    "line2": "Studio 2",
+    "city": "Brooklyn",
+    "state": "NY",
+    "postal_code": "11205",
+    "country": "US"
+  },
+  "contact": {
+    "phone": "(718) 555-0142",
+    "email": "hello@lacquerandlume.com",
+    "instagram": "@lacquerandlume",
+    "booking_note": "Deposits hold your chair. Reschedule free up to 24 hours out."
+  },
+  "hours": {
+    "tue": {
+      "open": "10:00",
+      "close": "19:00"
+    },
+    "wed": {
+      "open": "10:00",
+      "close": "19:00"
+    },
+    "thu": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "fri": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "sat": {
+      "open": "09:00",
+      "close": "18:00"
+    },
+    "sun": {
+      "open": "11:00",
+      "close": "17:00"
+    }
+  },
+  "theme": {
+    "base": "#000000",
+    "surface": "#080808",
+    "surface_raised": "#101010",
+    "line": "#1E1E1E",
+    "gold": "#D4AF37",
+    "rose_gold": "#B76E79",
+    "text": "#F5F1E8",
+    "muted": "#A39B8B",
+    "accent": "#D4AF37",
+    "heading_font": "Cormorant Garamond",
+    "body_font": "DM Sans",
+    "logo_url": "",
+    "logo_mark": "L&L"
+  },
+  "services": [
+    {
+      "id": "classic-mani",
+      "name": "Classic Manicure",
+      "category": "Manicure",
+      "description": "Shape, cuticle care, buff, polish.",
+      "duration_min": 30,
+      "buffer_min": 5,
+      "price": 32
+    },
+    {
+      "id": "gel-mani",
+      "name": "Gel Manicure",
+      "category": "Manicure",
+      "description": "Classic manicure finished in gel, cured to a two-week wear.",
+      "duration_min": 45,
+      "buffer_min": 10,
+      "price": 52
+    },
+    {
+      "id": "acrylic-full",
+      "name": "Acrylic Full Set",
+      "category": "Extensions",
+      "description": "Full acrylic set, sculpted to your shape and length.",
+      "duration_min": 90,
+      "buffer_min": 15,
+      "price": 88
+    },
+    {
+      "id": "acrylic-fill",
+      "name": "Acrylic Fill",
+      "category": "Extensions",
+      "description": "Two-to-three week rebalance on an existing acrylic set.",
+      "duration_min": 60,
+      "buffer_min": 10,
+      "price": 58,
+      "is_fill": true
+    },
+    {
+      "id": "gelx-full",
+      "name": "Gel-X Full Set",
+      "category": "Extensions",
+      "description": "Soft-gel extensions, lightweight and soak-off.",
+      "duration_min": 90,
+      "buffer_min": 15,
+      "price": 96
+    },
+    {
+      "id": "gelx-fill",
+      "name": "Gel-X Fill",
+      "category": "Extensions",
+      "description": "Rebalance and refresh on an existing Gel-X set.",
+      "duration_min": 60,
+      "buffer_min": 10,
+      "price": 66,
+      "is_fill": true
+    },
+    {
+      "id": "dip-full",
+      "name": "Dip Powder Full Set",
+      "category": "Extensions",
+      "description": "Dip powder over natural nail or tip.",
+      "duration_min": 75,
+      "buffer_min": 10,
+      "price": 72
+    },
+    {
+      "id": "dip-fill",
+      "name": "Dip Powder Fill",
+      "category": "Extensions",
+      "description": "Fill and reseal on an existing dip set.",
+      "duration_min": 50,
+      "buffer_min": 10,
+      "price": 52,
+      "is_fill": true
+    },
+    {
+      "id": "classic-pedi",
+      "name": "Classic Pedicure",
+      "category": "Pedicure",
+      "description": "Soak, shape, cuticle care, callus smoothing, polish.",
+      "duration_min": 45,
+      "buffer_min": 5,
+      "price": 48
+    },
+    {
+      "id": "spa-pedi",
+      "name": "Deluxe Spa Pedicure",
+      "category": "Pedicure",
+      "description": "Classic pedicure with sugar scrub, mask and extended massage.",
+      "duration_min": 60,
+      "buffer_min": 10,
+      "price": 68
+    },
+    {
+      "id": "gel-pedi",
+      "name": "Gel Pedicure",
+      "category": "Pedicure",
+      "description": "Spa pedicure finished in gel.",
+      "duration_min": 60,
+      "buffer_min": 10,
+      "price": 70
+    },
+    {
+      "id": "nail-art",
+      "name": "Nail Art",
+      "category": "Add-on",
+      "description": "Hand-painted detail, priced per hand.",
+      "duration_min": 20,
+      "buffer_min": 0,
+      "price": 22,
+      "addon": true
+    },
+    {
+      "id": "soak-off",
+      "name": "Soak-Off & Removal",
+      "category": "Add-on",
+      "description": "Gentle removal of an existing set.",
+      "duration_min": 20,
+      "buffer_min": 5,
+      "price": 16,
+      "addon": true
+    },
+    {
+      "id": "repair",
+      "name": "Single Nail Repair",
+      "category": "Add-on",
+      "description": "One broken or lifted nail, rebuilt and matched.",
+      "duration_min": 15,
+      "buffer_min": 0,
+      "price": 12,
+      "addon": true
+    }
+  ],
+  "technicians": [
+    {
+      "id": "imani",
+      "name": "Imani",
+      "title": "Lead Technician & Owner",
+      "bio": "Fifteen years behind the table. Known for structured acrylic and a coffin shape that holds.",
+      "specialties": [
+        "Acrylic",
+        "Structured gel",
+        "Coffin & stiletto",
+        "Nail art"
+      ],
+      "schedule": {
+        "tue": {
+          "start": "10:00",
+          "end": "19:00"
+        },
+        "wed": {
+          "start": "10:00",
+          "end": "19:00"
+        },
+        "thu": {
+          "start": "10:00",
+          "end": "20:00"
+        },
+        "fri": {
+          "start": "10:00",
+          "end": "20:00"
+        },
+        "sat": {
+          "start": "09:00",
+          "end": "18:00"
+        },
+        "sun": {
+          "off": true
+        },
+        "mon": {
+          "off": true
+        }
+      }
+    },
+    {
+      "id": "rosa",
+      "name": "Rosa",
+      "title": "Nail Technician",
+      "bio": "Gel-X specialist with a light hand on natural nails. Ask her for an ombre.",
+      "specialties": [
+        "Gel-X",
+        "Ombre",
+        "French",
+        "Dip powder"
+      ],
+      "schedule": {
+        "wed": {
+          "start": "11:00",
+          "end": "19:00"
+        },
+        "thu": {
+          "start": "11:00",
+          "end": "20:00"
+        },
+        "fri": {
+          "start": "11:00",
+          "end": "20:00"
+        },
+        "sat": {
+          "start": "09:00",
+          "end": "18:00"
+        },
+        "sun": {
+          "start": "11:00",
+          "end": "17:00"
+        },
+        "mon": {
+          "off": true
+        },
+        "tue": {
+          "off": true
+        }
+      }
+    },
+    {
+      "id": "tasha",
+      "name": "Tasha",
+      "title": "Nail Technician",
+      "bio": "Pedicures and natural-nail care. The calmest forty-five minutes of your week.",
+      "specialties": [
+        "Pedicure",
+        "Natural nail care",
+        "Classic manicure"
+      ],
+      "schedule": {
+        "tue": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "thu": {
+          "start": "12:00",
+          "end": "20:00"
+        },
+        "fri": {
+          "start": "12:00",
+          "end": "20:00"
+        },
+        "sat": {
+          "start": "09:00",
+          "end": "17:00"
+        },
+        "sun": {
+          "start": "11:00",
+          "end": "17:00"
+        },
+        "mon": {
+          "off": true
+        },
+        "wed": {
+          "off": true
+        }
+      }
+    }
+  ],
+  "nail_menu": {
+    "shapes": [
+      {
+        "id": "square",
+        "label": "Square",
+        "description": "Straight edge, sharp corners.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "round",
+        "label": "Round",
+        "description": "Soft curve following the fingertip.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "oval",
+        "label": "Oval",
+        "description": "Elongated curve, slimming on the hand.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "squoval",
+        "label": "Squoval",
+        "description": "Square face with rounded corners.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "almond",
+        "label": "Almond",
+        "description": "Tapered sides to a rounded point.",
+        "surcharge": 5,
+        "extra_min": 5
+      },
+      {
+        "id": "coffin",
+        "label": "Coffin / Ballerina",
+        "description": "Tapered sides with a flat tip.",
+        "surcharge": 8,
+        "extra_min": 10
+      },
+      {
+        "id": "stiletto",
+        "label": "Stiletto",
+        "description": "Sharp taper to a point. Needs length.",
+        "surcharge": 10,
+        "extra_min": 12
+      }
+    ],
+    "lengths": [
+      {
+        "id": "short",
+        "label": "Short",
+        "description": "At or just past the fingertip.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "medium",
+        "label": "Medium",
+        "description": "A quarter-inch of extension.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "medium-long",
+        "label": "Medium-Long",
+        "description": "Half an inch of extension.",
+        "surcharge": 5,
+        "extra_min": 5
+      },
+      {
+        "id": "long",
+        "label": "Long",
+        "description": "Three-quarters of an inch.",
+        "surcharge": 10,
+        "extra_min": 10
+      },
+      {
+        "id": "extra-long",
+        "label": "Extra-Long",
+        "description": "An inch or more. Sculpted for strength.",
+        "surcharge": 18,
+        "extra_min": 15
+      }
+    ],
+    "finishes": [
+      {
+        "id": "glossy",
+        "label": "Glossy",
+        "description": "High-shine top coat.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "matte",
+        "label": "Matte",
+        "description": "Flat, velvet top coat.",
+        "surcharge": 5,
+        "extra_min": 0
+      },
+      {
+        "id": "chrome",
+        "label": "Chrome",
+        "description": "Mirrored powder buffed over gel.",
+        "surcharge": 15,
+        "extra_min": 10
+      },
+      {
+        "id": "french",
+        "label": "French",
+        "description": "Hand-painted tip in any colour.",
+        "surcharge": 15,
+        "extra_min": 15
+      },
+      {
+        "id": "ombre",
+        "label": "Ombre",
+        "description": "Blended fade between two shades.",
+        "surcharge": 20,
+        "extra_min": 20
+      },
+      {
+        "id": "cat-eye",
+        "label": "Cat-Eye",
+        "description": "Magnetic gel drawn into a moving band of light.",
+        "surcharge": 15,
+        "extra_min": 10
+      }
+    ]
+  },
+  "colours": [
+    {
+      "id": "bare-silk",
+      "name": "Bare Silk",
+      "hex": "#E8D5C4",
+      "family": "Nude",
+      "finish": "glossy"
+    },
+    {
+      "id": "cafe-noir",
+      "name": "Café Noir",
+      "hex": "#6B4423",
+      "family": "Nude",
+      "finish": "glossy"
+    },
+    {
+      "id": "milk-glass",
+      "name": "Milk Glass",
+      "hex": "#F2EDE4",
+      "family": "Nude",
+      "finish": "glossy"
+    },
+    {
+      "id": "rouge-noir",
+      "name": "Rouge Noir",
+      "hex": "#4A0E1E",
+      "family": "Red",
+      "finish": "glossy"
+    },
+    {
+      "id": "signal-red",
+      "name": "Signal Red",
+      "hex": "#C41E3A",
+      "family": "Red",
+      "finish": "glossy"
+    },
+    {
+      "id": "petal",
+      "name": "Petal",
+      "hex": "#F0B6C4",
+      "family": "Pink",
+      "finish": "glossy"
+    },
+    {
+      "id": "fuchsia-hour",
+      "name": "Fuchsia Hour",
+      "hex": "#C2185B",
+      "family": "Pink",
+      "finish": "glossy"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "hex": "#0B0B0B",
+      "family": "Dark",
+      "finish": "matte"
+    },
+    {
+      "id": "midnight-jade",
+      "name": "Midnight Jade",
+      "hex": "#0F3D33",
+      "family": "Dark",
+      "finish": "glossy"
+    },
+    {
+      "id": "storm",
+      "name": "Storm",
+      "hex": "#4A4E58",
+      "family": "Dark",
+      "finish": "matte"
+    },
+    {
+      "id": "gilt",
+      "name": "Gilt",
+      "hex": "#D4AF37",
+      "family": "Metallic",
+      "finish": "chrome"
+    },
+    {
+      "id": "rose-chrome",
+      "name": "Rose Chrome",
+      "hex": "#B76E79",
+      "family": "Metallic",
+      "finish": "chrome"
+    },
+    {
+      "id": "cobalt",
+      "name": "Cobalt",
+      "hex": "#1B4FA0",
+      "family": "Brights",
+      "finish": "glossy"
+    },
+    {
+      "id": "citrine",
+      "name": "Citrine",
+      "hex": "#E4A11B",
+      "family": "Brights",
+      "finish": "glossy"
+    }
+  ],
+  "deposit": {
+    "enabled": true,
+    "kind": "percent",
+    "amount": 25,
+    "min_amount": 15,
+    "applies_over_min": 60,
+    "applies_to_categories": [
+      "Extensions"
+    ],
+    "refundable_until_hours": 24,
+    "policy_text": "Sets of an hour or longer hold with a 25% deposit, applied to your total at checkout. Reschedule or cancel free up to 24 hours before your appointment."
+  },
+  "agent": {
+    "name": "The Front Desk",
+    "tone": "warm, precise, unhurried",
+    "persona": "You are the front desk at Lacquer & Lume, a small Brooklyn nail studio. You speak the way the owner does: calm, specific, never pushy. You know the menu, the techs and the deposit policy cold. You never rush a client and you never oversell — if a fill is the right call instead of a full set, you say so.",
+    "greeting": "Welcome to Lacquer & Lume. Tell me what you're after and I'll get you on the book.",
+    "signoff": "See you soon.",
+    "escalation_phone": "(718) 555-0142"
+  },
+  "payments": {
+    "processor": "paypal",
+    "currency": "USD",
+    "tax_rate": 0.08875,
+    "tip_presets": [
+      18,
+      20,
+      25
+    ]
+  },
+  "seo": {
+    "title": "Lacquer & Lume — Nail Studio in Fort Greene, Brooklyn",
+    "description": "Unhurried acrylic, Gel-X and spa pedicures in Fort Greene. Book online with a deposit that holds your chair.",
+    "keywords": [
+      "nail salon brooklyn",
+      "gel-x brooklyn",
+      "acrylic nails fort greene",
+      "spa pedicure brooklyn"
+    ],
+    "price_range": "$$$"
+  }
+}

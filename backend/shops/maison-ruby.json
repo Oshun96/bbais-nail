@@ -1,0 +1,657 @@
+{
+  "slug": "maison-ruby",
+  "name": "Maison Ruby Nail Lounge",
+  "tagline": "Sit down. Be adored.",
+  "about": "A seven-chair lounge on the Westside with a walk-in row up front and appointment stations in the back. Fast when you need fast, slow when you want slow.",
+  "timezone": "America/New_York",
+  "address": {
+    "line1": "1155 Howell Mill Road",
+    "line2": "Suite 140",
+    "city": "Atlanta",
+    "state": "GA",
+    "postal_code": "30318",
+    "country": "US"
+  },
+  "contact": {
+    "phone": "(404) 555-0198",
+    "email": "book@maisonruby.com",
+    "instagram": "@maisonrubyatl",
+    "booking_note": "Walk-ins welcome up front. Book the back room for extensions and art."
+  },
+  "hours": {
+    "mon": {
+      "open": "09:30",
+      "close": "19:30"
+    },
+    "tue": {
+      "open": "09:30",
+      "close": "19:30"
+    },
+    "wed": {
+      "open": "09:30",
+      "close": "19:30"
+    },
+    "thu": {
+      "open": "09:30",
+      "close": "20:30"
+    },
+    "fri": {
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "sat": {
+      "open": "09:00",
+      "close": "20:00"
+    },
+    "sun": {
+      "closed": true,
+      "open": "11:00",
+      "close": "17:00"
+    }
+  },
+  "theme": {
+    "base": "#050505",
+    "surface": "#0C0A0B",
+    "surface_raised": "#171314",
+    "line": "#2A2124",
+    "gold": "#C9A227",
+    "rose_gold": "#B76E79",
+    "text": "#F7EFF1",
+    "muted": "#B09AA0",
+    "accent": "#B76E79",
+    "heading_font": "Playfair Display",
+    "body_font": "Inter",
+    "logo_url": "",
+    "logo_mark": "MR"
+  },
+  "services": [
+    {
+      "id": "express-mani",
+      "name": "Express Manicure",
+      "category": "Manicure",
+      "description": "Shape, cuticle tidy, polish. In and out.",
+      "duration_min": 25,
+      "buffer_min": 5,
+      "price": 25
+    },
+    {
+      "id": "gel-mani",
+      "name": "Gel Manicure",
+      "category": "Manicure",
+      "description": "Shape, cuticle care, gel colour, cured.",
+      "duration_min": 45,
+      "buffer_min": 10,
+      "price": 45
+    },
+    {
+      "id": "builder-gel",
+      "name": "Builder Gel Overlay",
+      "category": "Manicure",
+      "description": "Strength overlay on the natural nail.",
+      "duration_min": 60,
+      "buffer_min": 10,
+      "price": 60
+    },
+    {
+      "id": "acrylic-full",
+      "name": "Acrylic Full Set",
+      "category": "Extensions",
+      "description": "Sculpted acrylic in your shape and length.",
+      "duration_min": 85,
+      "buffer_min": 15,
+      "price": 75
+    },
+    {
+      "id": "acrylic-fill",
+      "name": "Acrylic Fill",
+      "category": "Extensions",
+      "description": "Rebalance on an existing acrylic set.",
+      "duration_min": 55,
+      "buffer_min": 10,
+      "price": 48,
+      "is_fill": true
+    },
+    {
+      "id": "gelx-full",
+      "name": "Gel-X Full Set",
+      "category": "Extensions",
+      "description": "Soft-gel extensions, soak-off.",
+      "duration_min": 85,
+      "buffer_min": 15,
+      "price": 85
+    },
+    {
+      "id": "gelx-fill",
+      "name": "Gel-X Fill",
+      "category": "Extensions",
+      "description": "Refresh on an existing Gel-X set.",
+      "duration_min": 55,
+      "buffer_min": 10,
+      "price": 58,
+      "is_fill": true
+    },
+    {
+      "id": "dip-full",
+      "name": "Dip Powder Set",
+      "category": "Extensions",
+      "description": "Dip powder over natural nail or tip.",
+      "duration_min": 70,
+      "buffer_min": 10,
+      "price": 65
+    },
+    {
+      "id": "express-pedi",
+      "name": "Express Pedicure",
+      "category": "Pedicure",
+      "description": "Soak, shape, polish.",
+      "duration_min": 35,
+      "buffer_min": 5,
+      "price": 38
+    },
+    {
+      "id": "ruby-pedi",
+      "name": "The Ruby Pedicure",
+      "category": "Pedicure",
+      "description": "Extended soak, scrub, mask, hot towel, massage.",
+      "duration_min": 70,
+      "buffer_min": 10,
+      "price": 78
+    },
+    {
+      "id": "gel-pedi",
+      "name": "Gel Pedicure",
+      "category": "Pedicure",
+      "description": "Full pedicure finished in gel.",
+      "duration_min": 60,
+      "buffer_min": 10,
+      "price": 62
+    },
+    {
+      "id": "art-simple",
+      "name": "Nail Art — Simple",
+      "category": "Add-on",
+      "description": "Accent nails, dots, lines, chrome accents.",
+      "duration_min": 15,
+      "buffer_min": 0,
+      "price": 15,
+      "addon": true
+    },
+    {
+      "id": "art-custom",
+      "name": "Nail Art — Custom",
+      "category": "Add-on",
+      "description": "Full custom design, ten nails. Book with Yaya.",
+      "duration_min": 45,
+      "buffer_min": 5,
+      "price": 55,
+      "addon": true
+    },
+    {
+      "id": "soak-off",
+      "name": "Soak-Off & Removal",
+      "category": "Add-on",
+      "description": "Removal of an existing set.",
+      "duration_min": 20,
+      "buffer_min": 5,
+      "price": 12,
+      "addon": true
+    },
+    {
+      "id": "repair",
+      "name": "Single Nail Repair",
+      "category": "Add-on",
+      "description": "One nail rebuilt and matched.",
+      "duration_min": 15,
+      "buffer_min": 0,
+      "price": 10,
+      "addon": true
+    }
+  ],
+  "technicians": [
+    {
+      "id": "yaya",
+      "name": "Yaya",
+      "title": "Master Artist",
+      "bio": "Custom sets and freehand art. Books out two weeks — worth it.",
+      "specialties": [
+        "Custom art",
+        "Acrylic",
+        "Stiletto",
+        "Chrome"
+      ],
+      "schedule": {
+        "tue": {
+          "start": "10:00",
+          "end": "19:30"
+        },
+        "wed": {
+          "start": "10:00",
+          "end": "19:30"
+        },
+        "thu": {
+          "start": "10:00",
+          "end": "20:30"
+        },
+        "fri": {
+          "start": "09:00",
+          "end": "21:00"
+        },
+        "sat": {
+          "start": "09:00",
+          "end": "20:00"
+        },
+        "sun": {
+          "off": true
+        },
+        "mon": {
+          "off": true
+        }
+      }
+    },
+    {
+      "id": "linh",
+      "name": "Linh",
+      "title": "Senior Technician",
+      "bio": "Fastest clean gel set in the building. Precision cuticle work.",
+      "specialties": [
+        "Gel",
+        "Gel-X",
+        "Builder gel",
+        "French"
+      ],
+      "schedule": {
+        "mon": {
+          "start": "09:30",
+          "end": "19:30"
+        },
+        "tue": {
+          "start": "09:30",
+          "end": "19:30"
+        },
+        "thu": {
+          "start": "09:30",
+          "end": "20:30"
+        },
+        "fri": {
+          "start": "09:00",
+          "end": "21:00"
+        },
+        "sat": {
+          "start": "09:00",
+          "end": "18:00"
+        },
+        "sun": {
+          "off": true
+        },
+        "wed": {
+          "off": true
+        }
+      }
+    },
+    {
+      "id": "brianna",
+      "name": "Brianna",
+      "title": "Nail Technician",
+      "bio": "Pedicures and natural-nail health. Ask about the hot-towel finish.",
+      "specialties": [
+        "Pedicure",
+        "Natural nail care",
+        "Dip powder"
+      ],
+      "schedule": {
+        "mon": {
+          "start": "09:30",
+          "end": "18:00"
+        },
+        "wed": {
+          "start": "09:30",
+          "end": "19:30"
+        },
+        "thu": {
+          "start": "12:00",
+          "end": "20:30"
+        },
+        "fri": {
+          "start": "12:00",
+          "end": "21:00"
+        },
+        "sat": {
+          "start": "09:00",
+          "end": "20:00"
+        },
+        "sun": {
+          "off": true
+        },
+        "tue": {
+          "off": true
+        }
+      }
+    },
+    {
+      "id": "kevin",
+      "name": "Kevin",
+      "title": "Nail Technician",
+      "bio": "Walk-in row. Straightforward, quick, and never cuts a corner.",
+      "specialties": [
+        "Express manicure",
+        "Express pedicure",
+        "Repairs"
+      ],
+      "schedule": {
+        "mon": {
+          "start": "09:30",
+          "end": "19:30"
+        },
+        "tue": {
+          "start": "09:30",
+          "end": "19:30"
+        },
+        "wed": {
+          "start": "09:30",
+          "end": "19:30"
+        },
+        "thu": {
+          "start": "09:30",
+          "end": "20:30"
+        },
+        "fri": {
+          "start": "09:00",
+          "end": "21:00"
+        },
+        "sat": {
+          "off": true
+        },
+        "sun": {
+          "off": true
+        }
+      }
+    }
+  ],
+  "nail_menu": {
+    "shapes": [
+      {
+        "id": "square",
+        "label": "Square",
+        "description": "Straight edge, sharp corners.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "round",
+        "label": "Round",
+        "description": "Soft curve following the fingertip.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "oval",
+        "label": "Oval",
+        "description": "Elongated curve.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "squoval",
+        "label": "Squoval",
+        "description": "Square face, rounded corners.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "almond",
+        "label": "Almond",
+        "description": "Tapered to a rounded point.",
+        "surcharge": 8,
+        "extra_min": 5
+      },
+      {
+        "id": "coffin",
+        "label": "Coffin / Ballerina",
+        "description": "Tapered sides, flat tip.",
+        "surcharge": 12,
+        "extra_min": 10
+      },
+      {
+        "id": "stiletto",
+        "label": "Stiletto",
+        "description": "Sharp taper to a point.",
+        "surcharge": 15,
+        "extra_min": 12
+      }
+    ],
+    "lengths": [
+      {
+        "id": "short",
+        "label": "Short",
+        "description": "At the fingertip.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "medium",
+        "label": "Medium",
+        "description": "A quarter-inch out.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "medium-long",
+        "label": "Medium-Long",
+        "description": "Half an inch out.",
+        "surcharge": 8,
+        "extra_min": 5
+      },
+      {
+        "id": "long",
+        "label": "Long",
+        "description": "Three-quarters of an inch.",
+        "surcharge": 15,
+        "extra_min": 10
+      },
+      {
+        "id": "extra-long",
+        "label": "Extra-Long",
+        "description": "An inch or more, sculpted for strength.",
+        "surcharge": 25,
+        "extra_min": 18
+      }
+    ],
+    "finishes": [
+      {
+        "id": "glossy",
+        "label": "Glossy",
+        "description": "High-shine top coat.",
+        "surcharge": 0,
+        "extra_min": 0
+      },
+      {
+        "id": "matte",
+        "label": "Matte",
+        "description": "Flat velvet top coat.",
+        "surcharge": 6,
+        "extra_min": 0
+      },
+      {
+        "id": "chrome",
+        "label": "Chrome",
+        "description": "Mirror powder over gel.",
+        "surcharge": 18,
+        "extra_min": 10
+      },
+      {
+        "id": "french",
+        "label": "French",
+        "description": "Hand-painted tip, any colour.",
+        "surcharge": 18,
+        "extra_min": 15
+      },
+      {
+        "id": "ombre",
+        "label": "Ombre",
+        "description": "Blended fade between shades.",
+        "surcharge": 25,
+        "extra_min": 20
+      },
+      {
+        "id": "cat-eye",
+        "label": "Cat-Eye",
+        "description": "Magnetic gel pulled into a band of light.",
+        "surcharge": 18,
+        "extra_min": 10
+      }
+    ]
+  },
+  "colours": [
+    {
+      "id": "ruby",
+      "name": "House Ruby",
+      "hex": "#9B111E",
+      "family": "Red",
+      "finish": "glossy"
+    },
+    {
+      "id": "cherry-cola",
+      "name": "Cherry Cola",
+      "hex": "#5C1A1B",
+      "family": "Red",
+      "finish": "glossy"
+    },
+    {
+      "id": "sheer-blush",
+      "name": "Sheer Blush",
+      "hex": "#EFCFD4",
+      "family": "Nude",
+      "finish": "glossy"
+    },
+    {
+      "id": "toffee",
+      "name": "Toffee",
+      "hex": "#9C6B4A",
+      "family": "Nude",
+      "finish": "glossy"
+    },
+    {
+      "id": "vanilla",
+      "name": "Vanilla Cream",
+      "hex": "#F5EBDC",
+      "family": "Nude",
+      "finish": "glossy"
+    },
+    {
+      "id": "bubblegum",
+      "name": "Bubblegum",
+      "hex": "#F49AC2",
+      "family": "Pink",
+      "finish": "glossy"
+    },
+    {
+      "id": "magenta",
+      "name": "Magenta Hour",
+      "hex": "#B0135E",
+      "family": "Pink",
+      "finish": "glossy"
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "hex": "#2B1A17",
+      "family": "Dark",
+      "finish": "glossy"
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "hex": "#111318",
+      "family": "Dark",
+      "finish": "matte"
+    },
+    {
+      "id": "forest",
+      "name": "Deep Forest",
+      "hex": "#14372B",
+      "family": "Dark",
+      "finish": "glossy"
+    },
+    {
+      "id": "rose-chrome",
+      "name": "Rose Chrome",
+      "hex": "#B76E79",
+      "family": "Metallic",
+      "finish": "chrome"
+    },
+    {
+      "id": "pearl-chrome",
+      "name": "Pearl Chrome",
+      "hex": "#DCE3E8",
+      "family": "Metallic",
+      "finish": "chrome"
+    },
+    {
+      "id": "gold-leaf",
+      "name": "Gold Leaf",
+      "hex": "#C9A227",
+      "family": "Metallic",
+      "finish": "chrome"
+    },
+    {
+      "id": "tangerine",
+      "name": "Tangerine",
+      "hex": "#E8590C",
+      "family": "Brights",
+      "finish": "glossy"
+    },
+    {
+      "id": "electric-blue",
+      "name": "Electric Blue",
+      "hex": "#1266F1",
+      "family": "Brights",
+      "finish": "glossy"
+    },
+    {
+      "id": "lime",
+      "name": "Key Lime",
+      "hex": "#A3D93B",
+      "family": "Brights",
+      "finish": "glossy"
+    }
+  ],
+  "deposit": {
+    "enabled": true,
+    "kind": "fixed",
+    "amount": 20,
+    "min_amount": 20,
+    "applies_over_min": 45,
+    "applies_to_categories": [],
+    "refundable_until_hours": 48,
+    "policy_text": "Anything booked at 45 minutes or longer holds with a flat $20 deposit, credited to your total. Free to move or cancel up to 48 hours out."
+  },
+  "agent": {
+    "name": "Ruby",
+    "tone": "bright, quick, a little playful",
+    "persona": "You are Ruby, the front desk at Maison Ruby Nail Lounge in Atlanta. You are quick and friendly, you keep the walk-in row moving, and you always tell people honestly how long the wait is. You know every tech's specialty and you match people to the right one. You are never stiff and never corporate.",
+    "greeting": "Hey! Maison Ruby. What are we doing today — booking ahead, or are you walking in?",
+    "signoff": "Can't wait to see you.",
+    "escalation_phone": "(404) 555-0198"
+  },
+  "payments": {
+    "processor": "stripe",
+    "currency": "USD",
+    "tax_rate": 0.089,
+    "tip_presets": [
+      20,
+      22,
+      25
+    ]
+  },
+  "seo": {
+    "title": "Maison Ruby Nail Lounge — Westside Atlanta Nail Salon",
+    "description": "Walk-ins and appointments on Howell Mill. Acrylic, Gel-X, custom nail art and the Ruby Pedicure.",
+    "keywords": [
+      "nail salon atlanta",
+      "westside nail salon",
+      "custom nail art atlanta",
+      "gel-x atlanta"
+    ],
+    "price_range": "$$"
+  }
+}
