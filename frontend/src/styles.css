@@ -564,3 +564,7 @@ p { margin: 0 0 1em; }
 
 .cs-tryon { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
 .cs-tryon.off { opacity: 0.5; }
+
+.foot-staff { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.foot-staff a { color: var(--muted); }
+.foot-staff a:hover { color: var(--accent); }

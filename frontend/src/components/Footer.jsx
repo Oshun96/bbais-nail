@@ -1,7 +1,9 @@
 import { useShop, fmtTime } from '../ShopContext'
 
 export default function Footer() {
-  const { shop } = useShop()
+  const { shop, slug } = useShop()
+  // Keep the ?shop= selection when stepping into a staff screen.
+  const staffHref = (p) => (slug ? `${p}?shop=${encodeURIComponent(slug)}` : p)
   const { derived } = shop
   const today = derived.day_order[(new Date().getDay() + 6) % 7] // JS weeks start Sunday
 
@@ -59,7 +61,13 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} {shop.name}
           </span>
-          <span>Powered by BBAIS</span>
+          <span className="foot-staff">
+            {/* Staff screens are reachable but deliberately understated — they
+                are behind a key, not behind obscurity. */}
+            <a href={staffHref('/desk')}>Front desk</a>
+            <a href={staffHref('/admin')}>Admin</a>
+            <span>Powered by BBAIS</span>
+          </span>
         </div>
       </div>
     </footer>
