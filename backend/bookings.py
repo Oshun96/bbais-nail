@@ -28,6 +28,7 @@ async def ensure_indexes() -> None:
     col = get_db()[COLLECTION]
     await col.create_index([("shop_slug", 1), ("date", 1), ("technician_id", 1)])
     await col.create_index([("shop_slug", 1), ("reference", 1)], unique=True)
+    await col.create_index([("shop_slug", 1), ("client_key", 1)])
 
 
 async def for_day(shop_slug: str, d: Date, *, technician_id: Optional[str] = None) -> List[dict]:
@@ -55,7 +56,9 @@ async def overlapping(shop_slug: str, d: Date, technician_id: str, start_min: in
 
 
 async def create(doc: dict) -> dict:
-    doc = {**doc, "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    # client_key is what ties a booking to a returning client (CRM, colour memory).
+    doc = {**doc, "client_key": normalise_phone((doc.get("client") or {}).get("phone", "")),
+           "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     await get_db()[COLLECTION].insert_one(dict(doc))
     return doc
 
@@ -70,6 +73,38 @@ async def set_status(shop_slug: str, reference: str, status: str) -> Optional[di
     return await get_db()[COLLECTION].find_one_and_update(
         {"shop_slug": shop_slug, "reference": reference.upper()},
         {"$set": {"status": status}},
+        projection={"_id": 0},
+        return_document=True,
+    )
+
+
+def normalise_phone(phone: str) -> str:
+    """Digits only — how a shop actually recognises a returning client, however
+    they typed their number this time."""
+    return "".join(c for c in str(phone or "") if c.isdigit())[-10:] or ""
+
+
+async def in_range(shop_slug: str, start: Date, end: Date) -> List[dict]:
+    """Every booking between two dates inclusive, ordered for a calendar."""
+    cur = get_db()[COLLECTION].find(
+        {"shop_slug": shop_slug, "date": {"$gte": start.isoformat(), "$lte": end.isoformat()}},
+        {"_id": 0},
+    ).sort([("date", 1), ("start", 1)])
+    return [b async for b in cur]
+
+
+async def for_client(shop_slug: str, phone: str) -> List[dict]:
+    """A client's whole history, newest first."""
+    cur = get_db()[COLLECTION].find(
+        {"shop_slug": shop_slug, "client_key": normalise_phone(phone)}, {"_id": 0}
+    ).sort([("date", -1), ("start", -1)])
+    return [b async for b in cur]
+
+
+async def update_fields(shop_slug: str, reference: str, fields: dict) -> Optional[dict]:
+    return await get_db()[COLLECTION].find_one_and_update(
+        {"shop_slug": shop_slug, "reference": reference.upper()},
+        {"$set": fields},
         projection={"_id": 0},
         return_document=True,
     )

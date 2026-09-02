@@ -11,6 +11,7 @@ import Visit from './pages/Visit'
 import Book from './pages/Book'
 import CheckIn from './pages/CheckIn'
 import Desk from './pages/Desk'
+import Admin from './pages/Admin'
 
 export default function App() {
   const { shop, error } = useShop()
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/book" element={<Book />} />
           <Route path="/check-in" element={<CheckIn />} />
           <Route path="/desk" element={<Desk />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

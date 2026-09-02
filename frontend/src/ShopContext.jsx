@@ -42,6 +42,22 @@ export function ShopProvider({ children }) {
     }
   }, [slug])
 
+  /**
+   * Re-read the config in place after an admin edit.
+   *
+   * Deliberately does NOT clear `shop` first: blanking it unmounts the whole
+   * tree (App renders a loading state), which would throw the admin back to its
+   * first tab and discard whatever they were in the middle of.
+   */
+  const refreshShop = async () => {
+    const target = slug || (await apiGet('/api/shops')).default
+    const cfg = await apiGet(`/api/shops/${encodeURIComponent(target)}/config`)
+    applyTheme(cfg.theme)
+    setDocumentMeta(cfg)
+    setShop(cfg)
+    return cfg
+  }
+
   const switchShop = (next) => {
     const url = new URL(window.location.href)
     if (next) url.searchParams.set('shop', next)
@@ -51,7 +67,9 @@ export function ShopProvider({ children }) {
     setSlug(next)
   }
 
-  const value = useMemo(() => ({ shop, roster, error, slug, switchShop }), [shop, roster, error, slug])
+  const value = useMemo(() => ({ shop, roster, error, slug, switchShop, refreshShop }),
+    // refreshShop closes over `slug` only, so it does not need its own dep
+    [shop, roster, error, slug])
   return <ShopCtx.Provider value={value}>{children}</ShopCtx.Provider>
 }
 
