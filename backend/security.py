@@ -13,7 +13,8 @@ from __future__ import annotations
 
 import hmac
 import os
-from typing import List
+import time
+from typing import Dict, List, Tuple
 
 from fastapi import Header, HTTPException, Request, status
 from starlette.middleware.base import BaseHTTPMiddleware
@@ -83,16 +84,64 @@ class BodySizeLimitMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 
-async def require_admin(x_admin_key: str = Header(default="")) -> bool:
+# --------------------------------------------------- admin brute-force gate ---
+# A front-desk key has to be short enough to type between clients, which means
+# it is short enough to guess if guessing is free. So guessing is not free:
+# a handful of wrong keys from an address locks that address out for a while.
+# Held in memory deliberately — this deployment runs a single instance, and a
+# restart clearing the counters is not a weakness worth a database round-trip
+# on every admin request.
+MAX_ADMIN_ATTEMPTS = 5
+ADMIN_LOCKOUT_SECONDS = 300
+_admin_failures: Dict[str, Tuple[int, float]] = {}
+
+
+def _client_key(request: Request) -> str:
+    """Who is knocking. Honours the proxy header Render sets, falling back to
+    the socket address."""
+    fwd = (request.headers.get("x-forwarded-for") or "").split(",")[0].strip()
+    return fwd or (request.client.host if request.client else "unknown")
+
+
+def _locked_for(who: str) -> int:
+    fails, until = _admin_failures.get(who, (0, 0.0))
+    remaining = int(until - time.time())
+    return remaining if fails >= MAX_ADMIN_ATTEMPTS and remaining > 0 else 0
+
+
+def _record_failure(who: str) -> None:
+    fails, _ = _admin_failures.get(who, (0, 0.0))
+    fails += 1
+    _admin_failures[who] = (fails, time.time() + ADMIN_LOCKOUT_SECONDS)
+
+
+def _clear_failures(who: str) -> None:
+    _admin_failures.pop(who, None)
+
+
+async def require_admin(request: Request, x_admin_key: str = Header(default="")) -> bool:
     """Admin gate (VULN-AUTH-01).
 
     The key lives in the environment, is compared in constant time, and an unset
     key FAILS CLOSED — an unconfigured deployment refuses admin access rather
-    than silently allowing it.
+    than silently allowing it. Repeated wrong keys from one address are locked
+    out, which is what makes a short, typeable key safe to use.
     """
     expected = optional_env("ADMIN_API_KEY")
     if not expected:
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "admin access is not configured")
+
+    who = _client_key(request)
+    locked = _locked_for(who)
+    if locked:
+        raise HTTPException(
+            status.HTTP_429_TOO_MANY_REQUESTS,
+            f"too many failed attempts — try again in {locked // 60 + 1} minute(s)",
+        )
+
     if not x_admin_key or not hmac.compare_digest(x_admin_key, expected):
+        _record_failure(who)
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "invalid admin key")
+
+    _clear_failures(who)
     return True

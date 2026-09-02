@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { applyTheme, setDocumentMeta } from './theme'
 import { apiGet } from './api'
+import { injectSchemas, linkManifest, registerServiceWorker } from './seo'
 
 const ShopCtx = createContext(null)
 
@@ -33,6 +34,10 @@ export function ShopProvider({ children }) {
         applyTheme(cfg.theme)
         setDocumentMeta(cfg)
         setShop(cfg)
+        // SEO and PWA follow the shop, so a config swap re-brands both.
+        linkManifest(cfg.slug, cfg.theme)
+        injectSchemas(cfg.slug)
+        registerServiceWorker()
       } catch (e) {
         if (live) setError(e.message)
       }
