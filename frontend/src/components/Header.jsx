@@ -1,14 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useShop } from '../ShopContext'
-
-const LINKS = [
-  ['/', 'Home'],
-  ['/services', 'Services'],
-  ['/menu', 'The Menu'],
-  ['/team', 'Our Team'],
-  ['/visit', 'Visit'],
-]
+import { NAV } from '../routes'
 
 export default function Header() {
   const { shop } = useShop()
@@ -52,7 +45,7 @@ export default function Header() {
 
         {/* Visibility is CSS-driven so it tracks resizes; JS only holds intent. */}
         <nav className={open ? 'nav open' : 'nav'} id="site-nav">
-          {LINKS.map(([path, label]) => (
+          {NAV.map(({ path, label }) => (
             <NavLink
               key={path}
               to={to(path)}
