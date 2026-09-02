@@ -13,6 +13,7 @@ export const NAV = [
   { path: '/visit', label: 'Visit' },
   { path: '/book', label: 'Book' },
   { path: '/check-in', label: 'Check In' },
+  { path: '/chat', label: 'Chat' },
 ]
 
 /** Staff screens: real routes that need files on the host, but kept out of the

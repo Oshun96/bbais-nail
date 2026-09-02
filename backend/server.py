@@ -21,6 +21,7 @@ import routes_booking  # noqa: E402
 import clients  # noqa: E402
 import reviews  # noqa: E402
 import routes_admin  # noqa: E402
+import routes_agent  # noqa: E402
 import routes_desk  # noqa: E402
 import walkins  # noqa: E402
 import shop_store  # noqa: E402
@@ -41,6 +42,7 @@ async def lifespan(app: FastAPI):
     await walkins.ensure_indexes()
     await clients.ensure_indexes()
     await reviews.ensure_indexes()
+    await routes_agent.ensure_indexes()
     print(f"[bbais-nail] db ok; seeded shops: {written or 'none (already current)'}")
     yield
     await db.close()
@@ -124,6 +126,7 @@ app.include_router(routes_desk.register(_load))
 _admin_router, _public_reviews = routes_admin.register(_load)
 app.include_router(_admin_router)
 app.include_router(_public_reviews)
+app.include_router(routes_agent.register(_load))
 
 
 if __name__ == "__main__":

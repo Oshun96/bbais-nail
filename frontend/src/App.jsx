@@ -12,6 +12,8 @@ import Book from './pages/Book'
 import CheckIn from './pages/CheckIn'
 import Desk from './pages/Desk'
 import Admin from './pages/Admin'
+import Chat from './pages/Chat'
+import AgentBubble from './components/AgentBubble'
 
 export default function App() {
   const { shop, error } = useShop()
@@ -40,10 +42,12 @@ export default function App() {
           <Route path="/check-in" element={<CheckIn />} />
           <Route path="/desk" element={<Desk />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       <Footer />
+      <AgentBubble />
       <ShopSwitcher />
     </>
   )
